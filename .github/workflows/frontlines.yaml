@@ -41,7 +41,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-jobs-json-
       - name: Scrape job notifications
-        run: python jobscraper.py
+        run: python frontlines.py
       - name: Commit changes
         run: |
           git config --global user.email "action@github.com"
