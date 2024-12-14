@@ -164,7 +164,7 @@ jobs:
 
       - name: Scrape job notifications
         run: |
-          xvfb-run -a python frontlines.py
+          xvfb-run -a python frontlines.py --browser headless-chrome
         env:
           DISPLAY: ":99"
 
