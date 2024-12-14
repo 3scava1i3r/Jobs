@@ -80,6 +80,8 @@ jobs:
           ls 
           cd ./jora
           node step_1.js  # Adjust the script name if necessary
+          node step_2.js  # Adjust the script name if necessary
+
 
       # Optional: Save the scraped data as artifacts for later use
       - name: Upload scraped data

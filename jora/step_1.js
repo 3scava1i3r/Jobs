@@ -9,7 +9,7 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 urlList = [
     'https://ar.jora.com/',
     'https://au.jora.com/'
-    , 'https://us.jora.com/', 'https://th.jora.com/', 'https://sg.jobsdb.com'
+    , 'https://us.jora.com/', 'https://th.jora.com/', 'https://sg.jobsdb.com/'
     , 'https://pt.jora.com/', 'https://ph.jora.com/', 'https://pe.jora.com/'
     , 'https://nz.jora.com/', 'https://my.jora.com/'
 
