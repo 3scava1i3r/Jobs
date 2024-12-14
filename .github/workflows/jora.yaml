@@ -71,14 +71,14 @@ jobs:
       - name: Install dependencies
         run: |
           ls
-          cd jora
+          cd ./jora
           npm install  # Assuming the script's dependencies are listed in package.json
 
       # Step 4: Run the scraping script in 'jora' directory
       - name: Run scraper
         run: |
           ls 
-          cd jora
+          cd ./jora
           node frontlines.js  # Adjust the script name if necessary
 
       # Optional: Save the scraped data as artifacts for later use
