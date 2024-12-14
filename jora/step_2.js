@@ -18,7 +18,7 @@ function normalizeUrl(urlStr) {
     const parsedUrl = new URL(urlStr);
     // console.log(parsedUrl.toString())
     parsedUrl.searchParams.delete('fsv'); // Remove 'fsv' query parameter
-    console.log(parsedUrl.toString())
+    // console.log(parsedUrl.toString()) uncomment later
 
     return parsedUrl.toString(); // Return the normalized URL
 }
@@ -80,7 +80,7 @@ fs.readdir(scrapedDataDir, (err, files) => {
                     // All files have been processed
                     let uniqueUrlsSet = new Set(fullUrlFinalArray);
                     let uniqueUrlsArray = Array.from(uniqueUrlsSet);
-                    console.log("All unique full URLs:", uniqueUrlsArray);
+                    // console.log("All unique full URLs:", uniqueUrlsArray); uncomment later
 
                     // Export uniqueUrlsArray to a file
                     const outputPath = path.join(__dirname, 'unique_urls.json');

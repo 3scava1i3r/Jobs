@@ -4,6 +4,7 @@ const path = require('path');
 const cheerio = require('cheerio');  // Import cheerio for HTML parsing.
 
 const uniqueUrlsPath = path.join(__dirname, 'unique_urls.json');
+console.log(uniqueUrlsPath,"uniqueUrlsPath");
 
 function isFresherJob(jobTitle, jobDescription) {
     const fresherKeywords = [
