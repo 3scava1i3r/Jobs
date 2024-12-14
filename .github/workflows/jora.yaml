@@ -1,3 +1,47 @@
+# name: Node.js Job Scraper
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       # Step 1: Checkout the code from the repository
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       # Step 2: Set up Node.js environment
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '20'  # Use the Node.js version that suits your project
+
+#       # Step 3: Install dependencies
+#       - name: Install dependencies
+#         run: |
+#           cd jora
+#           npm install  # Assuming the script's dependencies are listed in package.json
+
+#       # Step 4: Run the scraping script
+#       - name: Run scraper
+#         run: |
+#           node step_1.js  # Adjust the script name if necessary
+
+#       # Optional: Save the scraped data as artifacts for later use
+#       - name: Upload scraped data
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: scraped-data
+#           path: ./scraped_data/  # The directory where the script saves the scraped data
+
+
 name: Node.js Job Scraper
 
 on:
@@ -23,20 +67,21 @@ jobs:
         with:
           node-version: '20'  # Use the Node.js version that suits your project
 
-      # Step 3: Install dependencies
+      # Step 3: Install dependencies in 'jora' directory
       - name: Install dependencies
         run: |
           cd jora
           npm install  # Assuming the script's dependencies are listed in package.json
 
-      # Step 4: Run the scraping script
+      # Step 4: Run the scraping script in 'jora' directory
       - name: Run scraper
         run: |
-          node step_1.js  # Adjust the script name if necessary
+          cd jora
+          node frontlines.js  # Adjust the script name if necessary
 
       # Optional: Save the scraped data as artifacts for later use
       - name: Upload scraped data
         uses: actions/upload-artifact@v3
         with:
           name: scraped-data
-          path: ./scraped_data/  # The directory where the script saves the scraped data
+          path: ./jora/scraped_data/  # The directory where the script saves the scraped data
