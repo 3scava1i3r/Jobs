@@ -62,7 +62,7 @@ fs.readFile(uniqueUrlsPath, 'utf8', (err, data) => {
     async function fetchHtml(url) {
         try {
             const response = await fetch(url);
-            console.log(response)
+            // console.log(response) uncomment later
             const html = await response.text();
             return html;
         } catch (error) {
@@ -96,7 +96,7 @@ fs.readFile(uniqueUrlsPath, 'utf8', (err, data) => {
             "method": "GET"
         }).then(response => response.text())
             .then(html => {
-                console.log(html);
+                // console.log(html); uncomment later
                 // const fileName = `${baseUrl.replace(/[^a-z0-9]/gi, '_')}_${keyword}_page${page}.html`;
                 // const filePath = path.join(__dirname, 'scraped_data', fileName);
                 // fs.writeFileSync(filePath, data);
@@ -109,10 +109,10 @@ fs.readFile(uniqueUrlsPath, 'utf8', (err, data) => {
                 const jobLink = $('.job-view-actions-container.bottom-actions-container a').attr('href');
 
                 // Log the extracted information
-                console.log('url', url);
-                console.log("Job Description:", jobDescription);
-                console.log("Job Info:", jobInfo);
-                console.log("Job Link:", jobLink);
+                // console.log('url', url); uncomment later
+                // console.log("Job Description:", jobDescription); uncomment later
+                // console.log("Job Info:", jobInfo); uncomment later
+                // console.log("Job Link:", jobLink); uncomment later
 
             })
             .catch(error => {
