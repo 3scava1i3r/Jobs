@@ -101,8 +101,8 @@ from selenium.common.exceptions import WebDriverException
 def setup_driver(user_agent):
     """Set up and return a Selenium WebDriver instance with a specific user agent."""
     options = Options()
-    options.add_argument("--headless")
     options.add_argument("--no-sandbox")
+    options.add_argument("--headless")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument(f"--user-agent={user_agent}")
     
