@@ -26,6 +26,7 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: |
+          cd jora
           npm install  # Assuming the script's dependencies are listed in package.json
 
       # Step 4: Run the scraping script
