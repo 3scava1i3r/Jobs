@@ -7,8 +7,8 @@ const writeFileAsync = promisify(fs.writeFile);
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 urlList = [
-    'https://ar.jora.com/',
-    'https://au.jora.com/'
+    // 'https://ar.jora.com/',
+    // 'https://au.jora.com/'
     , 'https://us.jora.com/', 'https://th.jora.com/', 'https://sg.jobsdb.com/'
     // , 'https://pt.jora.com/', 'https://ph.jora.com/', 'https://pe.jora.com/'
     // , 'https://nz.jora.com/', 'https://my.jora.com/'
@@ -85,7 +85,7 @@ async function processUrl(baseUrl, keyword, page) {
 async function main() {
     for (const baseUrl of urlList) {
         for (const keyword of keyword_list) {
-            for (let page = 1; page <= 2; page++) {
+            for (let page = 1; page <= 1; page++) {
                 await processUrl(baseUrl, keyword, page);
                 await delay(1000); // Rate limiting: 1 request per second
             }
