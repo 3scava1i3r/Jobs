@@ -8,17 +8,17 @@ const writeFileAsync = promisify(fs.writeFile);
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 urlList = [
     'https://ar.jora.com/',
-    'https://au.jora.com/'
-    , 'https://us.jora.com/', 'https://th.jora.com/', 'https://sg.jobsdb.com/'
-    , 'https://pt.jora.com/', 'https://ph.jora.com/', 'https://pe.jora.com/'
-    , 'https://nz.jora.com/', 'https://my.jora.com/'
+    // 'https://au.jora.com/'
+    // , 'https://us.jora.com/', 'https://th.jora.com/', 'https://sg.jobsdb.com/'
+    // , 'https://pt.jora.com/', 'https://ph.jora.com/', 'https://pe.jora.com/'
+    // , 'https://nz.jora.com/', 'https://my.jora.com/'
 
-    , 'https://mx.jora.com/'
-    , 'https://in.jora.com/'
+    // , 'https://mx.jora.com/'
+    // , 'https://in.jora.com/'
 
-    , 'https://ie.jora.com/', 'https://id.jora.com/'
+    // , 'https://ie.jora.com/', 'https://id.jora.com/'
 
-    , 'https://hk.jora.com/', 'https://uk.jora.com/', 'https://fr.jora.com/', 'https://es.jora.com/', 'https://ec.jora.com/', 'https://bd.jora.com/', 'https://br.jora.com/', 'https://ca.jora.com/', 'https://cl.jora.com/', 'https://co.jora.com/'
+    // , 'https://hk.jora.com/', 'https://uk.jora.com/', 'https://fr.jora.com/', 'https://es.jora.com/', 'https://ec.jora.com/', 'https://bd.jora.com/', 'https://br.jora.com/', 'https://ca.jora.com/', 'https://cl.jora.com/', 'https://co.jora.com/'
 
 ]
 keyword_list = ['backend', 'developer', 'software']
@@ -85,7 +85,7 @@ async function processUrl(baseUrl, keyword, page) {
 async function main() {
     for (const baseUrl of urlList) {
         for (const keyword of keyword_list) {
-            for (let page = 1; page <= 30; page++) {
+            for (let page = 1; page <= 2; page++) {
                 await processUrl(baseUrl, keyword, page);
                 await delay(1000); // Rate limiting: 1 request per second
             }

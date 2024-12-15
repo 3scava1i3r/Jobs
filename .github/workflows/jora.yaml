@@ -82,7 +82,7 @@ jobs:
           cd ./jora
           node step_1.js  # Adjust the script name if necessary
           node step_2.js  # Adjust the script name if necessary
-          cp unique_urls ./job_scraper/job_scraper/spiders/
+          cp unique_urls.json ./job_scraper/job_scraper/spiders/
           cd ./job_scraper/
           scrapy crawl job_spider > logs.txt
           cd ..
