@@ -85,7 +85,8 @@ jobs:
           cp unique_urls.json ./job_scraper/job_scraper/spiders/
           cd ./job_scraper/
           scrapy crawl job_spider > logs.txt
-          cd ..
+          cp ./step_3_folder/job_data_100percent.json ../
+          cd .. 
           node step_4.js  # Adjust the script name if necessary
           python step_5.py
 
