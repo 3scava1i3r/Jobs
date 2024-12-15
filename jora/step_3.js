@@ -1,10 +1,12 @@
+// 
+
 const fs = require('fs');
 const path = require('path');
 // const fetch = require('node-fetch');
 const cheerio = require('cheerio');  // Import cheerio for HTML parsing.
 
 const uniqueUrlsPath = path.join(__dirname, 'unique_urls.json');
-console.log(uniqueUrlsPath,"uniqueUrlsPath");
+// console.log(uniqueUrlsPath,"uniqueUrlsPath");
 
 function isFresherJob(jobTitle, jobDescription) {
     const fresherKeywords = [
@@ -110,10 +112,17 @@ fs.readFile(uniqueUrlsPath, 'utf8', (err, data) => {
                 const jobLink = $('.job-view-actions-container.bottom-actions-container a').attr('href');
 
                 // Log the extracted information
-                // console.log('url', url); uncomment later
-                // console.log("Job Description:", jobDescription); uncomment later
-                // console.log("Job Info:", jobInfo); uncomment later
-                // console.log("Job Link:", jobLink); uncomment later
+                // console.log('url', url); 
+                // console.log("Job Description:", jobDescription); 
+                // console.log("Job Info:", jobInfo); 
+                // console.log("Job Link:", jobLink);
+
+                if (isFresherJob(jobInfo, jobDescription)) {
+                        console.log("This job is likely for freshers.");
+                } else {
+                        console.log("This job may require more experience.");
+                    }
+
 
             })
             .catch(error => {

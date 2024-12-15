@@ -1,4 +1,4 @@
-// Html to json
+// Html to json and find all unique links with excluding senior and all
 
 const fs = require('fs');
 const path = require('path');

@@ -73,6 +73,7 @@ jobs:
           ls
           cd ./jora
           npm install  # Assuming the script's dependencies are listed in package.json
+          pip install scrapy
 
       # Step 4: Run the scraping script in 'jora' directory
       - name: Run scraper
@@ -81,8 +82,12 @@ jobs:
           cd ./jora
           node step_1.js  # Adjust the script name if necessary
           node step_2.js  # Adjust the script name if necessary
-          node step_3.js  # Adjust the script name if necessary
+          cp unique_urls ./job_scraper/job_scraper/spiders/
+          cd ./job_scraper/
+          scrapy crawl job_spider > logs.txt
+          cd ..
           node step_4.js  # Adjust the script name if necessary
+          python step_5.py
 
       # Optional: Save the scraped data as artifacts for later use
       - name: Upload scraped data

@@ -41,7 +41,7 @@ async function fetchWithRetry(url, options, retries = 3) {
 async function processUrl(baseUrl, keyword, page) {
 
 
-    const url = `${baseUrl}j?l=&nofollow=true&p=${page}&q=${keyword}&sp=homepage&surl=0&trigger_source=homepage`;
+    const url = `${baseUrl}j?a=24h&l=&nofollow=true&p=${page}&q=${keyword}&sp=homepage&surl=0&trigger_source=homepage`;
 
 
     // const url = `${baseUrl}j?l=&nofollow=true&p=${page}&q=${keyword}&sp=search&surl=0&tk=erN69pcQqxsBGoxImEJm-uPST43sluMBpjWDg2jMc&trigger_source=serp`;
@@ -85,7 +85,7 @@ async function processUrl(baseUrl, keyword, page) {
 async function main() {
     for (const baseUrl of urlList) {
         for (const keyword of keyword_list) {
-            for (let page = 1; page <= 1; page++) {
+            for (let page = 1; page <= 30; page++) {
                 await processUrl(baseUrl, keyword, page);
                 await delay(1000); // Rate limiting: 1 request per second
             }
