@@ -106,8 +106,7 @@ jobs:
 
       - name: Commit Filtered Jobs
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "3scava1i3r"
           git add filtered_jobs_no.json
           git commit -m "Add filtered jobs"
           git push
