@@ -96,3 +96,10 @@ jobs:
         with:
           name: scraped-data
           path: ./jora/scraped_data/  # The directory where the script saves the scraped data
+
+
+      - name: Upload Filtered Jobs
+        uses: actions/upload-artifact@v3
+        with:
+          name: filtered-jobs
+          path: filtered_jobs_no.json
